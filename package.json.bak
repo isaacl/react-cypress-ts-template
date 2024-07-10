@@ -57,7 +57,9 @@
     "typescript": "4.8.3"
   },
   "husky": {
-    "hooks": {}
+    "hooks": {
+      "pre-commit": "yarn typecheck && yarn test --watchAll=false && lint-staged"
+    }
   },
   "browserslist": {
     "production": [
