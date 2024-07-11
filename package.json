@@ -20,6 +20,7 @@
     "cy:run-ct-fast": "DISABLE_ESLINT_PLUGIN=true yarn cy:run-ct --config video=false screenshot=false"
   },
   "dependencies": {
+    "bulma": "^1.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-scripts": "5.0.1",
