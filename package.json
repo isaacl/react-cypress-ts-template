@@ -4,7 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start": "react-scripts start",
-    "build": "env DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test",
     "test:coverage": "yarn test --watchAll=false --collectCoverageFrom=src/**/*.ts* --collectCoverageFrom=!src/**/*.*.ts* --coverage",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --watch --runInBand",
@@ -12,12 +12,12 @@
     "lint": "eslint . --cache --cache-location node_modules/.cache/eslint",
     "typecheck": "tsc --noEmit",
     "validate": "npm-run-all --parallel format lint typecheck build",
-    "cy:open": "cypress open",
-    "cy:open-e2e": "server-test 3000 'cypress open --e2e --browser chrome'",
-    "cy:run-e2e": "server-test 3000 'cypress run --e2e --browser chrome'",
-    "cy:open-ct": "cypress open --component --browser chrome",
-    "cy:run-ct": "cypress run --component --browser chrome",
-    "cy:run-ct-fast": "yarn cy:run-ct --config video=false screenshot=false"
+    "cy:open": "DISABLE_ESLINT_PLUGIN=true cypress open",
+    "cy:open-e2e": "DISABLE_ESLINT_PLUGIN=true server-test 3000 'cypress open --e2e --browser chrome:beta'",
+    "cy:run-e2e": "DISABLE_ESLINT_PLUGIN=true server-test 3000 'cypress run --e2e --browser chrome:beta'",
+    "cy:open-ct": "DISABLE_ESLINT_PLUGIN=true cypress open --component --browser chrome:beta",
+    "cy:run-ct": "DISABLE_ESLINT_PLUGIN=true cypress run --component --browser chrome:beta",
+    "cy:run-ct-fast": "DISABLE_ESLINT_PLUGIN=true yarn cy:run-ct --config video=false screenshot=false"
   },
   "dependencies": {
     "react": "18.3.1",
