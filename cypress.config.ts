@@ -3,6 +3,7 @@ import plugins from './cypress/support/plugins'
 import tasks from './cypress/support/tasks'
 
 export default defineConfig({
+  defaultCommandTimeout: 1000, // faster failures for now
   // @ts-expect-error - experimentalSingleTabRunMode is not in the type definition
   experimentalSingleTabRunMode: true,
   retries: {
