@@ -1,6 +1,8 @@
 // src/components/CardContent.cy.tsx
 
 import CardContent from './CardContent'
+
+// not needed -- imported in component.ts
 // import '../styles.scss'
 
 describe('CardContent', () => {
