@@ -1,12 +1,23 @@
 // src/components/HeaderBarBrand.tsx
 import {FaReact} from 'react-icons/fa'
+import {NavLink} from 'react-router-dom'
 
 export default function HeaderBarBrand() {
   return (
-    <div>
-      <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
+    <div data-cy="header-bar-brand" className="navbar-brand">
+      <a
+        href="https://reactjs.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="navbar-item"
+      >
         <FaReact />
       </a>
+      <NavLink data-cy="navLink" to="/" className="navbar-item navbar-home">
+        <span>TOUR</span>
+        <span>OF</span>
+        <span>HEROES</span>
+      </NavLink>
     </div>
   )
 }
