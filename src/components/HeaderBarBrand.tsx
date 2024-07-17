@@ -10,13 +10,17 @@ export default function HeaderBarBrand() {
         target="_blank"
         rel="noopener noreferrer"
         className="navbar-item"
+        data-cy="header-bar-brand-link"
       >
-        <FaReact />
+        {/* should be span? */}
+        <div data-cy="react-icon-svg">
+          <FaReact />
+        </div>
       </a>
       <NavLink data-cy="navLink" to="/" className="navbar-item navbar-home">
-        <span>TOUR</span>
-        <span>OF</span>
-        <span>HEROES</span>
+        <span className="tour">TOUR</span>
+        <span className="of">OF</span>
+        <span className="heroes">HEROES</span>
       </NavLink>
     </div>
   )
