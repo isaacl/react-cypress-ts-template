@@ -12,10 +12,9 @@ export default function HeaderBarBrand() {
         className="navbar-item"
         data-cy="header-bar-brand-link"
       >
-        {/* should be span? */}
-        <div data-cy="react-icon-svg">
+        <span data-cy="react-icon-svg">
           <FaReact />
-        </div>
+        </span>
       </a>
       <NavLink data-cy="navLink" to="/" className="navbar-item navbar-home">
         <span className="tour">TOUR</span>
