@@ -11,5 +11,6 @@ describe('HeaderBar', () => {
       </MemoryRouter>,
     )
     cy.getByCy('header-bar-brand')
+    cy.findByRole('navigation')
   })
 })
