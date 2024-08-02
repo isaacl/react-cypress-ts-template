@@ -1,4 +1,12 @@
 // src/components/InputDetail.tsx
-export default function InputDetail() {
-  return <div>hello</div>
+type InputDetailProps = {
+  placeholder: string
+}
+
+export default function InputDetail({placeholder}: InputDetailProps) {
+  return (
+    <div>
+      <input placeholder={placeholder}></input>
+    </div>
+  )
 }
