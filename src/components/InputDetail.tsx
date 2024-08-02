@@ -1,14 +1,16 @@
-// src/components/InputDetail.tsx
+//  src/components/InputDetail.tsx
 type InputDetailProps = {
   name: string
   value: string
-  placeholder: string
+  placeholder?: string
+  readOnly?: boolean
 }
 
 export default function InputDetail({
   name,
   value,
   placeholder,
+  readOnly,
 }: InputDetailProps) {
   return (
     <div className="field">
@@ -19,6 +21,7 @@ export default function InputDetail({
         name={name}
         defaultValue={value}
         placeholder={placeholder}
+        readOnly={readOnly}
         className="input"
         type="text"
       ></input>
