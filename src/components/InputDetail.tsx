@@ -1,8 +1,10 @@
-//  src/components/InputDetail.tsx
+import type {ChangeEvent} from 'react'
+
 type InputDetailProps = {
   name: string
   value: string
   placeholder?: string
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
   readOnly?: boolean
 }
 
@@ -10,10 +12,14 @@ export default function InputDetail({
   name,
   value,
   placeholder,
+  onChange,
   readOnly,
 }: InputDetailProps) {
   return (
-    <div className="field">
+    // This needs two additional props:
+    // 1) id attr to link label and input field, in a unique way.
+    // 2) name attr for <input> -- this is used for form data format.
+    <div data-cy={`input-detail-${name}`} className="field">
       <label className="label" htmlFor={name}>
         {name}
       </label>
@@ -21,6 +27,7 @@ export default function InputDetail({
         name={name}
         defaultValue={value}
         placeholder={placeholder}
+        onChange={onChange}
         readOnly={readOnly}
         className="input"
         type="text"

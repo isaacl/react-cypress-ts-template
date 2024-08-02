@@ -9,12 +9,20 @@ describe('InputDetail', () => {
     const value = 'some value'
     const newValue = '42'
     cy.mount(
-      <InputDetail name={name} value={value} placeholder={placeholder} />,
+      <InputDetail
+        name={name}
+        value={value}
+        placeholder={placeholder}
+        onChange={cy.stub().as('onChange')}
+      />,
     )
 
     cy.contains(name)
     cy.findByPlaceholderText(placeholder).clear().type(newValue)
     cy.get('input').should('have.value', newValue)
+    cy.get('@onChange')
+      .its('callCount')
+      .should('eq', newValue.length + 1) // typing plus clear
   })
 
   it('should not allow the input field to be modified when readonly', () => {
@@ -32,5 +40,6 @@ describe('InputDetail', () => {
 
     cy.contains(name)
     cy.findByPlaceholderText(placeholder).should('have.attr', 'readOnly')
+    cy.get('input').should('have.value', value)
   })
 })
