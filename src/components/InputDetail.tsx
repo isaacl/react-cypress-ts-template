@@ -5,7 +5,7 @@ type InputDetailProps = {
   value: string
   placeholder?: string
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void
-  readOnly?: boolean
+  readOnly?: true
 }
 
 export default function InputDetail({
