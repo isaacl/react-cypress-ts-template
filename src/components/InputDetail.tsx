@@ -18,7 +18,8 @@ export default function InputDetail({
   return (
     // This needs two additional props:
     // 1) id attr to link label and input field, in a unique way.
-    // 2) name attr for <input> -- this is used for form data format.
+    // 2) name attr for <input> is used for data format, and shouldn't
+    //   be the same as the label text.
     <div data-cy={`input-detail-${name}`} className="field">
       <label className="label" htmlFor={name}>
         {name}
